@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Challenge 2
 import random
+import sys
 
 wordbank= ["indentation", "spaces"]
 tlgstudents= ['Alex', 'Benji', 'Cayla', 'Demetra', 'Derek', 'Deshawn', 'James', 'Maria', 'Marylyn', 'Nor', 'Sal', 'Sammy']
