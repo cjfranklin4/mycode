@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import sys
-podcast = ['Castle Super Beast', 'Fall of Civilizations','The Deprogram','Scam Goddess','For All Nerds Show']
 print("BATTLE WITH THE SLIME")
 
-your_dam = 0
+your_dam = 0 #your damage score against the slime
+
+# Question 1
 print("While walking to the next town, you run into a slime. AHHHHHHHH! ")
 print("""
         1: Hit it with a stick
@@ -11,13 +12,15 @@ print("""
         3: Run Away
         4: Stare
         """)
+
 ans1 = input(">")
 ans1 = ans1.strip()
-while ans1 not in ("1","2","3","4"):
+
+while ans1 not in ("1","2","3","4"): #validating answer input
     print("Please select from the choices above")
     ans1 = input(">")
 
-your_dam += int(ans1)
+your_dam += int(ans1) #updating damage score
 
 if your_dam == 3:
     print("Wow, you ran from a slime...")
@@ -32,8 +35,10 @@ print("""
         3. Check your bag for a spellbook
         4. Stare
         """)
+
 ans2 = input(">")
 ans2 = ans2.strip()
+
 while ans2 not in ("1","2","3","4"):
     print("Please select from the choices above")
     ans2 = input(">")
@@ -47,11 +52,14 @@ print("""
         3. Cast Zettaflare
         4. Stare
         """)
+
 ans3 = input(">")
 ans3=ans3.strip()
+
 while ans3 not in ("1","2","3","4"):
     print("Please select from the choices above")
     ans3 = input(">")
+
 your_dam += int(ans3)
 
 # Finale
@@ -61,3 +69,5 @@ elif your_dam > 5 and your_dam < 12:
     print("Somehow, everything you did missed. The slime shook its head(?) and walked away. But hey, you tried.")
 elif your_dam == 12:
     print("All you did was stare. The slime though your were weird and ran away. HOORAY")
+else:
+    print("How did you get here???")
