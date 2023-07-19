@@ -16,13 +16,19 @@ yuuki= {
 yuuki["Yuuki Anzai"].update({"Age":21})
 
 # print all keys
-yuu_obj = list(yuuki["Yuuki Anzai"].keys())
-print(yuu_obj)
+yuu_keys = list(yuuki["Yuuki Anzai"].keys())
+print(yuu_keys)
 
 #choose a key
 choice = input("Choose a key from the list above: \n>")
-
-# return key and value
-choice_val = yuuki["Yuuki Anzai"].get(choice)
-name = list(yuuki.keys())
-print(f"{name[0]}'s {choice} is: {choice_val}")
+yuu_obj = yuuki["Yuuki Anzai"]
+if yuu_obj.get(choice) == None:
+    #valid_key = input("Please input a valid key: \n")
+    print("Please input a valid key")
+    while choice == None:
+        choice
+else:
+    # return key and value
+    choice_val = yuuki["Yuuki Anzai"].get(choice)
+    name = list(yuuki.keys())
+    print(f"{name[0]}'s {choice} is: {choice_val}")
