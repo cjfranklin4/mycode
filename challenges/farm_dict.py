@@ -16,13 +16,13 @@ ne_farm()
 # Part 2
 print("\nPART 2")
 farm_names = []
-def get_farm_names():
+def get_farm_names(): #save all farm names in a list
     for farm in farms:
         farm_names.append(farm["name"].lower())
 get_farm_names()
 #print(farm_names)
 
-def print_farm_names():
+def print_farm_names(): #print farm names to be used with input
     for farm in farms:
         print(f'{farm["name"]}')
 
