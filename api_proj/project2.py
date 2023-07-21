@@ -2,6 +2,7 @@
 
 import requests
 import sys
+import os
 
 #Bored API url
 bored_url = "http://www.boredapi.com/api/activity/"
@@ -62,10 +63,11 @@ get_recss = call_api(user_choice)
 
 # display the user's reccomendations
 def display_reccs(reccomends):
-    print(reccomends, 'within display reccs')
-    for recc in reccomends:
+    #print(reccomends, 'within display reccs')
+    for index, recc in enumerate(reccomends):
         #Print activity name
-        print(f"How about {recc['activity']}?")
+        acc_name = recc['activity']
+        print(f"How about {acc_name}?")
 
         # Say about how much it should cost
         price = recc['price']
@@ -80,7 +82,33 @@ def display_reccs(reccomends):
         # Check for a link to the activity
         if recc['link'] != '':
             print(f"Here is a link to try it: {recc['link']}")
-        print("\nHere's another one!")
+        if index != (len(reccomends) - 1):
+            print("\nHere's another one!")
+
 display_reccs(get_recss)
 
 # Save in file for later?
+def save_for_later(recc_list):
+    while True:#ask if they want to save their reccs in a file for later
+        print("\nDo you want to save your reccomendations in a file? Y or N")
+        confirm = input("\n>").strip().upper()
+        if confirm in ["Y","N"]:
+            break
+        print("Please choose a valid option.")
+    if confirm == "N":#if No, close the program
+        print("Hope you enjoyed your reccomendations!")
+        sys.exit()
+    else:#if yes, write to file in the user's CWD named reccomendations.txt
+        print(f"The 'reccomendations.txt' file will be saved to your current directory: {os.getcwd()}")
+        with open('reccomendations.txt', 'a') as recc_file:
+            print(f"Here is a list of reccomended acitivites for you!\n",file=recc_file)
+            for recc in recc_list:
+                activity = recc['activity']
+                acc_link = recc['link']
+                if acc_link != '':
+                    print(f"Activity Name: {activity}. Link to learn more: {acc_link}", file=recc_file)
+                else:
+                    print(f"Activity Name: {activity}", file=recc_file)
+        print(f"The 'reccomendations.txt' file has been created in {os.getcwd()}. Enjoy your reccomendations!")
+
+save_for_later(get_recss)
