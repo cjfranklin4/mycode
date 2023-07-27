@@ -49,14 +49,14 @@ def main():
             your_ans = input("Your Answer:")
             your_ans.strip()
             if your_ans in answers[index]:
-                print("You got it right!")
+                print("You got it right!\n")
                 score+= 1
                 break
             else:
-                print(f"Sorry, wrong answer. The correct answer was {correct[index]}.")
+                print(f"Sorry, wrong answer. The correct answer was {correct[index]}.\n")
                 break
 
-            print("\n")
+            #print("\n")
     print(f"You got {score}/10 correct!")
     print("Thanks for playing!")
 
