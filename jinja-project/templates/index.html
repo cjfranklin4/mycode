@@ -1,0 +1,36 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Your description goes here">
+        <meta name="keywords" content="one, two, three">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+        <title>Your Blog</title>
+    </head>
+    <body>
+    <nav class="navbar">
+	<h1>My Blog</h1>
+	<div class="links">
+	    <a href="{{url_for('homepage')}}">Home</a>
+	    <a href="{{url_for('create_blog')}}">Create a Blog</a>
+	</div>
+    </nav>
+    <div class="content">
+        <div id="blogs">
+            {% if blog_list%}
+            <div id="blog_feed">
+                {% for blog in blog_list %}
+                <div class="blog_details">
+                    <h3>{{blog.title}}</h3>
+                    <p>Written by {{blog.author}}</p>
+                    <div>{{blog.body}}</div>
+                    <span>{{blog.id}}</span>
+                </div>
+                {% endfor %}
+            </div>
+            {% else%}
+            <h2>No blogs? Make a new one! Click the button above</h2>
+            {% endif %}
+        </div>
+    </div>
+    </body>
+</html>

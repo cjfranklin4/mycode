@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Your description goes here">
+    <meta name="keywords" content="one, two, three">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>Create a Blog</title>
+    <body>
+        <nav class="navbar">
+	<h1>My Blog</h1>
+	<div class="links">
+    	    <a href="{{url_for('homepage')}}">Home</a>
+	    <a href="{{url_for('create_blog')}}">Create a Blog</a>
+	</div>
+        </nav>
+        <div class="content">
+        <h2>Create a Blog</h1>
+        <form action="/create" class="create" method="POST">
+            <label>Blog Title:</label>
+            <input required type="text" name="blog_title" placeholder="Title"/>
+            <label>Blog Body:</label>
+            <textarea required name="blog_body"></textarea>
+            <label>Author:</label>
+            <input type="text" name="blog_author" placeholder="Author"/>
+
+            <input type="submit" value="create">
+        </form>
+        </div>
+    </body>
+</html>
