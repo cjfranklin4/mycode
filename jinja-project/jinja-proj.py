@@ -4,8 +4,34 @@ from flask import request
 from flask import Flask
 from flask import url_for
 from flask import redirect
+import requests
+import random
 
 app = Flask(__name__)
+
+""" pink_poke_url = 'https://pokeapi.co/api/v2/pokemon-color/pink'
+    def call_api():
+    res = requests.get(pink_poke_url).json()
+    pink_poke_array = []
+    for item in res['pokemon_species']:
+        pink_poke_array.append(item['name'])
+
+    random.shuffle(pink_poke_array)
+    return pink_poke_array 
+
+    def get_pics(poke_names):    
+    pokemon = []
+    for mon in poke_names:
+        url = 'https://pokeapi.co/api/v2/pokemon/' + mon
+     #   resu = requests.get('https://pokeapi.co/api/v2/pokemon/'+ mon).json()
+        pokemon.append(url)
+    print(pokemon)
+
+    pokemon = call_api()
+    get_pics(pokemon)
+"""
+def get_poke_pic():
+    print('i work')
 
 #variables
 #blog_id = 0
