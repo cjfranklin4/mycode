@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+        <title>Email List</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Email List Directory</h1>
+            <table>
+                 {% for email in email_list %}
+                 <tr>
+                     <td class="name">{{email[0]}}</td>
+                     <td class="email">{{email[1]}}</td>
+                 </tr>
+                 {% endfor %}
+             </table>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+body {
+    background-color: grey;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#links_div h2{
+    color:blue;
+}
+
+#links_div p{
+    color:red;
+}
+
+#links_div a{
+    color:rgb(233, 224, 233);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+#links_div a:hover, #links_div a:focus, #links_div a:active{
+    color:yellow;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.list_div{
+    transition: all 0.3s ease;
+}
+
+.list_div:hover{
+    border:2px solid red;
+    padding:20px;
+    margin: 0 auto;
+    background-color: pink;
+    transition: all 0.3s ease;
+}
