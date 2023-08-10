@@ -33,7 +33,7 @@ chores = [
 c.execute('''
     CREATE TABLE IF NOT EXISTS chores (
         id INTEGER PRIMARY KEY,
-        chores TEXT NOT NULL
+        type TEXT NOT NULL
     )
 ''')
 c.executemany('INSERT INTO chores VALUES (?, ?)', chores)
@@ -61,12 +61,12 @@ c.execute('''
         id INTEGER PRIMARY KEY,
         weekday_id INTEGER NOT NULL,
         chores_id INTEGER NOT NULL,
-        completed TEXT NOT NULL,
+        completion_status TEXT NOT NULL,
         FOREIGN KEY (weekday_id) REFERENCES weekday (id),
         FOREIGN KEY (chores_id) REFERENCES chores (id)
     )
 ''')
-c.executemany('INSERT INTO weekday_chores (weekday_id, chores_id, completed) VALUES (?, ?, ?)', weekdays)
+c.executemany('INSERT INTO weekday_chores (weekday_id, chores_id, completion_status) VALUES (?, ?, ?)', weekdays_chores)
 
-c.commit()
+conn.commit()
 c.close()
