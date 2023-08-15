@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: pineapple
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: banana
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apricot
+  namespace: pineapple
+spec:
+  containers:
+    - name: banana-boat
+      image: nginx

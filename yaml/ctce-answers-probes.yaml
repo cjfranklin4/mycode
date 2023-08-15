@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: plumpod
+  namespace: plum
+spec:
+  containers:
+  - name: liveness
+    image: registry.gitlab.com/alta3/simplegoservice:latest
+    ports:
+    - containerPort: 9876
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 9876
+      initialDelaySeconds: 3
+      periodSeconds: 6
+      timeoutSeconds: 1
