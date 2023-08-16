@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wednesday-warmup
+  labels:
+    name: wednesday-warmup
+spec:
+  containers:
+  -
+    name: pizzaparty
+    image: registry.gitlab.com/alta3-instructor/tmnt
+    ports:
+    -
+      name: web
+      containerPort: 5055
+      protocol: TCP
+
