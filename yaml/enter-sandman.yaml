@@ -26,6 +26,9 @@ spec:
         - name: georgeorwell
           mountPath: /var/www/static/1984.txt
           subPath: 1984.txt
+        - name: metal-song
+          mountPath: /var/www/index.html
+          subPath: metal.html
       volumes:
       - name: nginx-base-config
         configMap:
@@ -33,3 +36,6 @@ spec:
       - name: georgeorwell
         configMap:
           name: nineteen-eighty-four
+      - name: metal-song
+        configMap: 
+          name: metal-cm
